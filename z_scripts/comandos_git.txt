@@ -1,0 +1,80 @@
+git --version
+git config --global user.name  "#####"   (name , email)  //para salvar
+git config --global user.email  "#####"   (name , email)   //para salvar
+git config --global core.editor  "#####"   (vscode) //para salvar]
+
+git config --global user.name  //apenas ver
+git config --list  //ver lista
+
+git init
+git satus
+git add arquivo
+git add -A
+git commit -m "##mensagem##"
+git log
+git branch 
+
+git reset --soft ?HEAD?
+git reset --mixed ?HEAD?
+git reset --hard ?HEAD?
+
+git branch #####
+git branch -D #####  ( para deletar )
+
+git checkout #####  (passa para o branch digitado)
+
+
+git diff
+git diff --name-only
+git diff #####
+
+
+git checkout -- HEAD #####  (retorna o ultimo jeito que o arquivo estava)
+
+PARA iginorar tem que criar um arquivo ( .gitinigonre )  e depois colocar os arquivos dentro dele
+Ex:  backup_do_banco.sql
+pode colocar  =  
+ *.txt  (qualquer arquivo que termine com .txt)
+qualquer/  (ingnora o diretorio)
+
+
+git revert --no-edit
+
+// precisa estar o branch que vai receber
+              de onde vai receber
+git merge            ########
+
+#############################################################################################
+
+// parar criar uma chave no local e depois passar  para o key no hub //
+ssh-keygen -t rsa -b 4096 -C "danielgilcastro@gmail.com"   (para criar a key remota)
+[enter]
+[enter]
+
+// faz  a ligação do local com o remoto
+git remote add origin https://github.com/danielgilcastro/aula_de_git.git   !!!!!!!!!   git remote remove origin   !!!!!!!!!!!!!
+git remote (para verificar)
+git remote -v (para verificar de forma detalhada)
+
+
+o mesmo para criar um branch novo mas precisa esta em um igual no local
+
+// para enviar o repositorio no origin  ' que eh o online '
+
+(envia do repositorio local)    (para online)   (bragitnch master)
+       git push -u               origin           master
+
+       para remover um branch
+       git push origin  :teste
+ 
+ git pull origin 
+
+
+
+
+
+
+
+
+
+

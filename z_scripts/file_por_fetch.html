@@ -1,0 +1,35 @@
+<input type="file" name="file" id="file" accept="image/*">
+<button id="bt_enviar">Enviar</button>
+<script>
+    bt_enviar.onclick = () => {
+
+        let data = new FormData();
+        data.append('nome','daniel')
+        data.append('foto',file.files[0])
+
+        fetch('carro.php',{
+            method: 'POST',
+            body: data
+        })
+        .then(resolve=>resolve.json())
+        .then(r=>console.log(r))
+
+    }
+/*
+<?PHP
+
+if (isset($_FILES['foto'])) {
+    $minha_arr['foto'] = $_FILES['foto'];
+} else {
+    $minha_arr['foto'] = 'nao tem';
+}
+
+$minha_arr['nome'] = $_POST['nome'];
+
+
+echo json_encode($minha_arr);
+
+*/
+</script>
+
+

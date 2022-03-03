@@ -1,0 +1,4 @@
+tsc --init          //cria o arquivo de configurar o typescript (tsconfig.json)
+"outDir": "dist",   //É para onde os arquivos vao quando sao compilados
+
+tsc -w              //para ficar assistindo o ts config

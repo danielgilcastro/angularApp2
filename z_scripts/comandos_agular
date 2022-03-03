@@ -1,0 +1,21 @@
+precisa ter o node instalado na maquina
+npm install typescript@latest --save-dev
+
+obs: caso erro na compilação---------------------
+Had the same issue. Open the file ../node_modules/@types/node/index.d.ts
+and remove the third slash
+// <reference lib="es2015" />
+--------------------------------------------------
+
+
+npm install angular-cli@latest -g     // para instalar o angular cli
+ng v                                  // para verificar a versao do angular 
+ng new app1                           // para criar um projeto angular no diretorio (depois do new vem o nome do projeto)
+ng generate component painel          // para criar um component (painel é o nome do component a ser criado)
+ng g c tentativas --spec=false
+ng build    ou    ng build --dev      // para montar a ng build para dev
+ng build --prod                       // montar  projeto minificado
+ng build --env=prod                   // caso de problema no outro
+
+
+npm install @angular/http@latest ---

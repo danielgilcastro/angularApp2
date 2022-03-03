@@ -1,0 +1,36 @@
+<div class="container mb-5">
+
+  <div class="secao">
+    <h3 class="text-center">Destaques do dia!</h3>
+    <h5 class="text-center">Aproveite as super ofertas que separamos para você:</h5>
+  </div>
+
+  <hr />
+
+  <div class="row">
+
+    <div class="" *ngIf="ofertasLoading() != 'object'">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-4" style="margin-bottom: 20px;"
+     *ngFor="let element of ofertas; index as i;"
+     >
+      <div class="card">
+        <img class="card-img-top" src="{{element.imagens[0].url}}">
+        <div class="card-block">
+          <h4 class="card-title">{{element.titulo}}</h4>
+          <p class="card-text">{{element.descricao_oferta}}</p>
+          <p class="preco">R$ {{element.valor}}</p>
+          <a href="#" class="btn btn-outline-primary">Ver oferta</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
