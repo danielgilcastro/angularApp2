@@ -3,26 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
 import { RouterModule } from '@angular/router';
-import { ROUTES } from './app-routs';
+// import { ROUTES } from './app-routs';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
 import { HomeComponent } from './home/home.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { OfertaComponent } from './oferta/oferta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopoComponent,
     HomeComponent,
-    RodapeComponent
+    RodapeComponent,
+    OfertaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES)
+    // RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

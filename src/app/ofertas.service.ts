@@ -10,12 +10,14 @@ export class OfertasService {
     //, private httpCliente:HttpClient
 
     public getOfertas() {
-
         //return fetch('http://localhost:3000/ofertas').then(resp=>resp.json())
-
         return this.http.get('http://localhost:3000/ofertas').toPromise().then((resposta: any) => resposta.json())
     }
 
+    public getOfertasPorCategoria(categoria:string){
+        return this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`)
+        .toPromise().then((resposta: any) => resposta.json())
+    }
 
 
 
