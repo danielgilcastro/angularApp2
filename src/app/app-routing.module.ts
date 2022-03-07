@@ -10,7 +10,9 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'diversao',component:DiversaoComponent},
   {path:'restaurantes',component:RestaurantesComponent},
-  {path:'oferta',component:OfertaComponent}
+  {path:'oferta',component:HomeComponent},
+  {path:'oferta/:id',component:OfertaComponent},
+  {path:'oferta/:id/:nome',component:OfertaComponent},
 
 ];
 

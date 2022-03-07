@@ -19,6 +19,6 @@ export class OfertasService {
         .toPromise().then((resposta: any) => resposta.json())
     }
 
-
+    
 
 }

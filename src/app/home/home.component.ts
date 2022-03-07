@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
       this.ofertasService.getOfertas().then((r) => { this.ofertas = r }).catch((err => console.log(err)))
-
   }
 
 }

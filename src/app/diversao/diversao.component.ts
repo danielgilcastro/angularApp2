@@ -43,7 +43,10 @@ export class DiversaoComponent implements OnInit {
         </div>
   
         <div class="row">
-          <button class="btn btn-outline-success">Ver oferta</button>
+        <a href="oferta/${i.id}">
+        <button class="btn btn-outline-success">Ver oferta</button>
+        </a>
+
         </div>
         </div>
         `
