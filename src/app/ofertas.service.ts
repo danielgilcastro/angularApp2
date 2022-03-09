@@ -30,4 +30,17 @@ export class OfertasService {
      // .then((resposta: any) => resposta.json())
     }
 
+
+    public getOfertasComoUsarPorId(id:string){
+        return this.http.get(`http://localhost:3000/como-usar?id=${id}`).toPromise()
+        .then((resp:any)=>resp.json())
+    }
+
+    public getOfertasOndeFicaPorId(id:string){
+        return this.http.get(`http://localhost:3000/onde-fica?id=${id}`).toPromise()
+        .then((resp:any)=>resp.json())
+    }
+
+
+
 }
