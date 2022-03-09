@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
-import { RouterModule } from '@angular/router';
-// import { ROUTES } from './app-routs';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -12,6 +13,8 @@ import { TopoComponent } from './topo/topo.component';
 import { HomeComponent } from './home/home.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { OfertaComponent } from './oferta/oferta.component';
+import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
+import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { OfertaComponent } from './oferta/oferta.component';
     TopoComponent,
     HomeComponent,
     RodapeComponent,
-    OfertaComponent
+    OfertaComponent,
+    ComoUsarComponent,
+    OndeFicaComponent
   ],
   imports: [
     BrowserModule,
