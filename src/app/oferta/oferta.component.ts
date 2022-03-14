@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
+import { interval } from 'rxjs';
+
 
 
 @Component({
@@ -28,8 +30,6 @@ export class OfertaComponent implements OnInit {
        console.log()
      })
 
-
-
 /*
     this.route.params.subscribe(
       (p:any)=>{console.log(p.id),
@@ -38,11 +38,13 @@ export class OfertaComponent implements OnInit {
     })
 */
 
-
-
    /* mehod subscribe
     this.route.params.subscribe((paramters:any)=>{})
     */
+    let inter = interval(2000);
+    inter.subscribe((int)=>{
+     console.log(int)
+   })
 
   }
 
