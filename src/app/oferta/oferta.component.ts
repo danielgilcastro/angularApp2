@@ -22,11 +22,24 @@ export class OfertaComponent implements OnInit {
 
 
   ngOnInit(): void {
-    let oferta = this.ofertasService.getOfertasPorId(this.route.snapshot.params['id'])
-    oferta.then((r)=>{
-      this.oferta = r.shift()
-      console.log()
+     this.ofertasService.getOfertasPorId(this.route.snapshot.params['id'])
+     .then((r)=>{
+       this.oferta = r.shift()
+       console.log()
+     })
+
+
+
+/*
+    this.route.params.subscribe(
+      (p:any)=>{console.log(p.id),
+        (erro:any)=>{console.log(erro)},
+        ()=>{console.log('processamento foi concluido')}
     })
+*/
+
+
+
    /* mehod subscribe
     this.route.params.subscribe((paramters:any)=>{})
     */

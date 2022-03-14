@@ -13,13 +13,13 @@ const routes: Routes = [
   { path: 'diversao', component: DiversaoComponent },
   { path: 'restaurantes', component: RestaurantesComponent },
   { path: 'oferta', component: HomeComponent },
-  { path: 'oferta/:id', component: OfertaComponent,children: [
+  { path: 'oferta/:id', component: OfertaComponent,children: 
+   [
     {path:"",component:ComoUsarComponent},
     {path:"como-usar",component:ComoUsarComponent},
     {path:"onde-fica",component:OndeFicaComponent},
     {path:"onde-fica/:valor",component:OndeFicaComponent}
-    ]
-  }
+  ]}
 
 ];
 

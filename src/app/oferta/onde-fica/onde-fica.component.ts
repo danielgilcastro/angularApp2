@@ -20,7 +20,14 @@ export class OndeFicaComponent implements OnInit {
     .then(r=>{
       this.descricao = r[0].descricao
     })
-    
+
+    this.activatedeRoute.params.subscribe((resolve)=>{
+      console.log(resolve)
+    })
+
+
+
+
     //console.log(this.activatedeRoute.snapshot.parent?.params)
   }
 
