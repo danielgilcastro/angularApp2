@@ -30,6 +30,7 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
     BrowserModule,
     AppRoutingModule,
     HttpModule,
+    HttpClientModule
     // RouterModule.forRoot(ROUTES)
   ],
   providers: [],

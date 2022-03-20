@@ -20,7 +20,6 @@ const routes: Routes = [
     {path:"onde-fica",component:OndeFicaComponent},
     {path:"onde-fica/:valor",component:OndeFicaComponent}
   ]}
-
 ];
 
 @NgModule({

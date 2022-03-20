@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, Observer } from 'rxjs';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
-import { interval } from 'rxjs';
-
 
 
 @Component({
@@ -22,15 +21,28 @@ export class OfertaComponent implements OnInit {
 
   public oferta : Oferta |any
 
-
   ngOnInit(): void {
      this.ofertasService.getOfertasPorId(this.route.snapshot.params['id'])
      .then((r)=>{
        this.oferta = r.shift()
-       console.log()
      })
 
-/*
+
+     /*
+     Observable.create((observer:Observer<any>)=>{
+      observer.next('xxx')
+      
+      observer.next('bbb')
+      observer.complete()
+      observer.next('ccc')
+      observer.error('errou meu chapa')
+
+     }).subscribe(
+       (res:any)=>{console.log(res)},
+       (res:any)=>{console.log(res)}
+       
+       )
+----------
     this.route.params.subscribe(
       (p:any)=>{console.log(p.id),
         (erro:any)=>{console.log(erro)},
@@ -38,13 +50,15 @@ export class OfertaComponent implements OnInit {
     })
 */
 
+
+
    /* mehod subscribe
-    this.route.params.subscribe((paramters:any)=>{})
+    this.route.params.subscribe(
+      (resp:any)=>{}
+      (erro:any)=>{}
+      (complete:any)=>{}
+      )
     */
-    let inter = interval(2000);
-    inter.subscribe((int)=>{
-     console.log(int)
-   })
 
   }
 

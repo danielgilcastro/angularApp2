@@ -12,6 +12,10 @@ export class HomeComponent implements OnInit {
 
   constructor(public ofertasService: OfertasService) { }
 
+
+
+
+
   public ofertas: any | Oferta[]
   public ofertasLoading = () => {
     return typeof (this.ofertas)
@@ -19,6 +23,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
       this.ofertasService.getOfertas().then((r) => { this.ofertas = r }).catch((err => console.log(err)))
+
+
   }
 
 }
