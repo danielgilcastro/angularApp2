@@ -14,7 +14,7 @@
           #termoDePesquisa
           (keyup)="pesquisa(termoDePesquisa.value)">
           <ul class="list-group" style="position: absolute">
-            <li class="list-group-item"  *ngFor="let iterator of ofertasList">
+            <li class="list-group-item"  *ngFor="let iterator of ofertas | async">
               {{iterator.titulo}}
             </li>
 
@@ -24,8 +24,6 @@
           <a a href=""><img src="/assets/carrinho.png" /></a>
         </div>
       </div>
-      
-
 
     </div>
   </nav>

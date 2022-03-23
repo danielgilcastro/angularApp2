@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
+
 
 
 @Component({
@@ -16,27 +17,28 @@ export class TopoComponent {
 
   public ofertas!: Observable<Oferta[]>;
 
-  private subject =  new Subject()
 
-  public ofertasList : Oferta[] = []
 
-  pesquisa(e: any) {
-
+  pesquisa(e: string) {
     if (e != "" && e.length > 1) {
-      console.log(e.length)
-      this.oferatsService.pesquisaOfertas(e)
-      .subscribe(
-        (ofertas: Oferta[]) => { this.ofertasList = ofertas }
-      )
-    }else{
-      this.ofertasList = []
+     this.ofertas = this.oferatsService.pesquisaOfertas(e)
+        // o subscribe vai se feito direto no template com o pipe  (  async  )
+        // .subscribe(
+        //   (ofertas: Oferta[]) => { this.ofertasList = ofertas }
+        // )
+    } else {
+      this.ofertas = new Observable()
     }
-
   }
 
+  
+  
 
 
   ngOnInit(): void {
+
+
+
 
   }
 

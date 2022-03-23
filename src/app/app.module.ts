@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-
-
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
+//import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
