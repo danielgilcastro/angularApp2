@@ -16,12 +16,21 @@ export class ComoUsarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.ofertasService.getOfertasComoUsarPorId(this.activetedRoute.snapshot.parent?.params['id'])
+   // 
+
+   this.activetedRoute.parent?.params.pipe().subscribe(
+     (res:any)=>{
+      this.ofertasService.getOfertasComoUsarPorId(res.id)
       .then(r => {
         this.descricao = r[0].descricao
       })
+     }
+   )
 
-    console.log()
+
+
+
+
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Observable, Observer } from 'rxjs';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
@@ -13,20 +13,20 @@ import { Oferta } from '../shared/oferta.model';
 })
 export class OfertaComponent implements OnInit {
 
-  constructor
-    (
-    private route: ActivatedRoute,
-    private ofertasService:OfertasService
-    ) { }
+  constructor(private route: ActivatedRoute,private ofertasService:OfertasService) { }
 
   public oferta : Oferta |any
 
   ngOnInit(): void {
-     this.ofertasService.getOfertasPorId(this.route.snapshot.params['id'])
-     .then((r)=>{
-       this.oferta = r.shift()
-     })
 
+    this.route.params.subscribe((r:any)=>{
+      this.ofertasService.getOfertasPorId(r.id)
+      .then((r)=>{
+        this.oferta = r.shift()
+      })
+        
+      }
+    )
 
      /*
      Observable.create((observer:Observer<any>)=>{

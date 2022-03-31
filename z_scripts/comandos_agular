@@ -19,3 +19,5 @@ ng build --env=prod                   // caso de problema no outro
 
 
 npm install @angular/http@latest ---
+
+

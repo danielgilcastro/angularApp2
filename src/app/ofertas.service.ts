@@ -49,17 +49,18 @@ export class OfertasService {
     public pesquisaOfertas(termo:string):Observable<any>{
         return this.http.get(`${URL_API}?descricao_oferta_like=${termo}`)
         .pipe(
+            debounceTime(2000),
+            retry(9),
             map((response:any)=>response.json())
         )
     }
 
     public buscaEnd(cep:string){
      //   return fetch(`https://viacep.com.br/ws/25926456/json/`).then(r=>r.json())
-       return this.httpN.get(`https://viacep.com.br/ws/25926456/json/`)
+       return this.httpN.get(`https://viacep.com.br/ws/${cep}/json/`)
         .pipe(
             debounceTime(1000),
             map((resp:any)=>resp),
-            retry(8)
         )
         
     }

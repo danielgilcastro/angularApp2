@@ -15,7 +15,7 @@
           (keyup)="pesquisa(termoDePesquisa.value)">
           <ul class="list-group" style="position: absolute">
             <li class="list-group-item"  *ngFor="let iterator of ofertas | async">
-              {{iterator.titulo}}
+              <a [routerLink]="['/oferta',iterator.id]" >{{iterator.titulo}}</a>
             </li>
 
           </ul>
@@ -27,7 +27,6 @@
 
     </div>
   </nav>
-
 
 
   <div class="menu">
