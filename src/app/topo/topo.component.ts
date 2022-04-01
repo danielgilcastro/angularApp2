@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { debounceTime, fromEvent, map, Observable } from 'rxjs';
+import { debounce, debounceTime, fromEvent, map, Observable } from 'rxjs';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
 
@@ -21,24 +21,33 @@ export class TopoComponent {
 
 
   pesquisa(e: string) {
-    if (e != "" && e.length > 1) {
 
-      this.ofertas = this.oferatsService.pesquisaOfertas(e)
-
-      // o subscribe vai se feito direto no template com o pipe  (  async  )
-      // .subscribe(
-      //   (ofertas: Oferta[]) => { this.ofertasList = ofertas }
-      // )
-
-    } else {
-      this.ofertas = new Observable()
-    }
   }
 
 
   
 
   ngOnInit(): void {
+    
+    //////////Input Pesquisa//////////
+      let inputPesquisa= document.getElementById('inputPesquisa') as HTMLInputElement
+      fromEvent(inputPesquisa,'input').pipe(
+        map(r=>(<HTMLInputElement>r.target).value),
+        debounceTime(1000)
+      ).subscribe(
+        (r)=>{
+          if (r!='') {
+            this.ofertas = this.oferatsService.pesquisaOfertas(r)
+          }else{
+            this.ofertas = new Observable
+          }
+          
+        }
+      )
+    //////////Input Pesquisa//////////
+
+
+
     }
   
 
