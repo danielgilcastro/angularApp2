@@ -20,6 +20,11 @@ export class OrdemCompraService {
         )
     }
     */
+   /**
+    * 
+    * @param pedido ( endereco , numero , complemento , formaDePagamento )
+    * @returns  Objeto (Pedido) com um id, que foi gravado no DB
+    */
     public efetivarCompra(pedido: Pedido): Observable<any> {
         let headers = {"content-type":"application/json"}
         return this.http.post('http://localhost:3000/pedidos',JSON.stringify(pedido),{'headers':headers})

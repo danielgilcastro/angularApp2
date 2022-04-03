@@ -207,81 +207,32 @@
   ],
   "pedidos": [
     {
-      "endereco": "siuo akeawa",
+      "endereco": "daniel de almeida",
       "numero": "123",
-      "complemento": "casa 33",
-      "formaDePagamento": "debito",
+      "complemento": "owowow",
+      "formaDePagamento": "dinheiro",
       "id": 1
     },
     {
-      "endereco": "nnnnnn",
-      "numero": "7",
-      "complemento": "rt",
+      "endereco": "sengudo",
+      "numero": "456",
+      "complemento": "lklk",
       "formaDePagamento": "dinheiro",
       "id": 2
     },
     {
-      "endereco": "XXXXXXX",
-      "numero": "s",
-      "complemento": "qwe",
+      "endereco": "mnbh",
+      "numero": "555",
+      "complemento": "999",
       "formaDePagamento": "debito",
       "id": 3
     },
     {
-      "endereco": "Daniel",
-      "numero": "679",
-      "complemento": "fodao",
+      "endereco": "rua taveres nunes",
+      "numero": "125",
+      "complemento": "ao lado da torre",
       "formaDePagamento": "dinheiro",
       "id": 4
-    },
-    {
-      "endereco": "julivaldo",
-      "numero": "999",
-      "complemento": "d2",
-      "formaDePagamento": "dinheiro",
-      "id": 5
-    },
-    {
-      "endereco": "puro ouro",
-      "numero": "997",
-      "complemento": "gldshire",
-      "formaDePagamento": "dinheiro",
-      "id": 6
-    },
-    {
-      "endereco": "ergew",
-      "numero": "w",
-      "complemento": "gweg",
-      "formaDePagamento": "dinheiro",
-      "id": 7
-    },
-    {
-      "endereco": "ewrg",
-      "numero": "g",
-      "complemento": "werg",
-      "formaDePagamento": "dinheiro",
-      "id": 8
-    },
-    {
-      "endereco": "wqfwqf",
-      "numero": "f",
-      "complemento": "wqfw",
-      "formaDePagamento": "debito",
-      "id": 9
-    },
-    {
-      "endereco": "wegewrg",
-      "numero": "g",
-      "complemento": "rgrg",
-      "formaDePagamento": "dinheiro",
-      "id": 10
-    },
-    {
-      "endereco": "wfwefw",
-      "numero": "w",
-      "complemento": "123",
-      "formaDePagamento": "dinheiro",
-      "id": 11
     }
   ]
 }

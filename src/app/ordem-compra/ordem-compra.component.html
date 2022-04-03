@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="ordem-compra">
-    <form novalidate id="formulario" #formulario="ngForm"  (ngSubmit)="mandaParaTS()">
+<div class="container" >
+  <div class="ordem-compra" *ngIf="idPedidoNumber === undefined">
+    <form novalidate id="formulario" #formulario="ngForm"  (ngSubmit)="confirmarCompra()">
     
       
       <h5>Sua Compra</h5>
@@ -61,83 +61,84 @@
           <h4>Total do pedido: 61.80</h4>
         </div>
       </div>
-      <br />
+      <br />     
 
-     
-      
-      <h5>Dados de entrega</h5>
-      <hr />
 
-      <!-- ////////////////// DADOS DA ENTREGA----------------- -->
+      <div class="form-row"><!-- <<< DADOS DA ENTREGA -->
+        
+        <div class="form-group col-md-6"><!--INPUT ENDERECO-->
 
-      
-
-      <div class="form-row">
-
-        <div class="form-group col-md-6">
-          <input 
+          <input name="endereco" ngModel #endereco="ngModel"
             type="text" 
-            class="form-control is-invalid" 
+            class="form-control" 
             placeholder="Endereço" 
-            autocomplete="off" 
-            minlength="5" 
-            required
-            ngModel name="endereco"
+            autocomplete="off"
+            required minlength="3" maxlength="120"
           >
-          <small class="form-text text-danger">Endereço inválido</small>
+          <small *ngIf="!endereco.pristine && endereco.valid " class="form-text text-success">OK</small>
+          <small *ngIf="endereco.dirty && endereco.invalid " class="form-text text-danger">Endereço inválido</small>
         </div>
 
-        <div class="form-group col-md-2">
-          <input 
-            type="text" 
-            class="form-control is-valid" 
-            placeholder="Número" 
-            autocomplete="off" 
-            minlength="1"
-            required
-            ngModel name="numero"
+        <div class="form-group col-md-2"><!--INPUT NUMERO-->
+
+          <input #inputNumero ='ngModel' ngModel
+            name="numero" type="text" 
+            class="form-control" 
+            required minlength="1" maxlength="10"
+            placeholder="Número" autocomplete="off" 
           >
-          <small class="form-text text-success">Ok</small>
+
+          <small *ngIf="" class="form-text text-success">Ok</small>
+          <small *ngIf="!inputNumero.pristine && inputNumero.invalid" class="form-text text-danger">Campo invalido</small>
+          <small *ngIf="!inputNumero.pristine && !inputNumero.invalid" class="form-text text-success">OK</small>
         </div>
 
-        <div class="form-group col-md-4">
-          <input 
+        <div class="form-group col-md-4"><!--INPUT COMPLEMENTO-->
+
+          <input name="complemento" ngModel
             type="text" 
             class="form-control" 
             placeholder="Complemento" 
             autocomplete="off"
-            ngModel name="complemento"
           >
         </div>
 
-      </div>
-      <!-- -----------------DADOS DA ENTREGA ////////////////// -->
+      </div> <!--DADOS DA ENTREGA >>> -->
 
       <br />
-      <!-- ////////////////// DADOS DO PAGAMENTO----------------- -->
-      <h5>Dados de pagamento</h5>
-      <hr />
 
-      <div class="form-row">
-          
+      <h5>Dados de pagamento</h5> <hr />
+      <div class="form-row"><!-- <<< DADOS DE PAGAMENTO-->
+
         <div class="form-group col-md-3">
-          <select class="form-control is-invalid" ngModel name="formaDePagamento">
+          
+          <select #formaDePagamento="ngModel" ngModel
+          name="formaDePagamento"
+          class="form-control"
+          required
+          >
             <option value="">Selecione uma opção</option>
             <option value="dinheiro">Dinheiro</option>
             <option value="debito">Débito</option>
+
           </select>
-          <small class="form-text text-danger">Forma de pagamento inválida</small>
+          <small *ngIf="formaDePagamento.dirty && !formaDePagamento.valid" class="form-text text-danger">Forma de pagamento inválida</small>
+          <small *ngIf="formaDePagamento.dirty && formaDePagamento.valid" class="form-text text-success">OK</small>
         </div>
-      </div>
-      <!-- -----------------DADOS DO PAGAMENTO ////////////////// -->
+      </div> <!--DADOS DE PAGAMENTO >>>-->
 
       <hr />
       
-      <button  class="btn btn-primary btn-lg">
+      <button  class="btn btn-primary btn-lg" id="btCofirmaCompra">
         Cofirmar compra
       </button>
       
     </form>
     
   </div>
+
+  <div class="ordem-compra" *ngIf="idPedidoNumber !== undefined">
+    <app-ordem-compra-sucesso [idDoProduto]="idPedidoNumber"></app-ordem-compra-sucesso>
+  </div>
+
 </div>
