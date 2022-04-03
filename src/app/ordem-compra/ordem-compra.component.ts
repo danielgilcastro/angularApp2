@@ -13,12 +13,13 @@ export class OrdemCompraComponent implements OnInit {
 
   constructor(private ordemCompraService: OrdemCompraService) { }
 
-  @ViewChild('formulario') f!: NgForm; 
+
+  @ViewChild('formulario')  f!: NgForm;
 
   public mandaParaTS(){
     console.log(this.f.value)
   }
- 
+
 
   ngOnInit() {    
   }

@@ -1,7 +1,8 @@
 <div class="container">
   <div class="ordem-compra">
-    <form novalidate id="formulario" #formulario="ngForm" >
+    <form novalidate id="formulario" #formulario="ngForm"  (ngSubmit)="mandaParaTS()">
     
+      
       <h5>Sua Compra</h5>
       <hr />
 
@@ -69,6 +70,8 @@
 
       <!-- ////////////////// DADOS DA ENTREGA----------------- -->
 
+      
+
       <div class="form-row">
 
         <div class="form-group col-md-6">
@@ -130,7 +133,7 @@
 
       <hr />
       
-      <button type="button" class="btn btn-primary btn-lg" (click)="mandaParaTS()">
+      <button  class="btn btn-primary btn-lg">
         Cofirmar compra
       </button>
       
